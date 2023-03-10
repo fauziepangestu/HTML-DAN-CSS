@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  pegawai = "Fauzie Pangestu Nur Hasan";
+        let jabatan = "asisten manager";
+        let status = "menikah";
+
+        let gaji = (jabatan == "manager") ? 10000000 : (jabatan == "asisten manager" ? 8000000 : 5000000);
+        let tunjangan_jabatan = ((gaji*10)/100);
+        let BPJS = ((gaji*10)/100);
+        let tunjangan_keluarga =(status =="menikah") ? ((gaji*10)/100) :0;
+
+        document.write (gaji + tunjangan_jabatan + BPJS + tunjangan_keluarga);
+
+    </script>
+</body>
+</html>
