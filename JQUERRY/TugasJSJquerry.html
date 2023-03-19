@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script src="jquery-3.6.4.js"></script>
+
+</head>
+
+<style>
+    body {
+        background-color: #0bb6ea;
+        margin: 1px;
+    }
+
+    /* .img {
+        padding: 1px;
+    } */
+    
+    img {
+        padding: 2px;
+        border-radius: 20px;
+        width: 33%;
+    }
+    
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 8pt;
+        background: #8a8f05;
+        border: 0;
+        border-radius: 15px;
+        justify-content: center;
+        margin: 0px 5px;
+        width: 100px;
+        height: 50px;
+    }
+
+    .btn:hover {
+        background-color: #076e9e;
+    }
+</style>
+
+<body>
+    <div class="img">
+        <img id="g1" src="mountain-g94d7eaa18_1920.jpg" alt="">
+        <img id="g2" src="river-gb40bdfc0d_1280.jpg" alt="">
+        <img id="g3" src="sea-geaf175fee_1280.jpg" alt="">
+    </div>
+
+    <p>Klik gambar untuk menyembunyikannya</p>
+
+    <div>
+        <input bold="text"  id="show" class="btn" type="button" value="Tampilkan">
+        <input bold="text" id="hide" class="btn" type="button" value="Hilangkan">
+    </div>
+</body>
+
+<script>
+    // untuk image
+    $( document ).ready(function() {
+
+        $("#g1").click(function(){
+            $( "#g1" ).hide(900);
+        });
+
+        $("#g2").click(function(){
+            $( "#g2" ).hide(900);
+        });
+
+        $("#g3").click(function(){
+            $( "#g3" ).hide(900);
+        });
+
+
+        $("#show").click(function(){
+            $( "img" ).show(900);
+        });
+
+        $("#hide").click(function(){
+            $( "img" ).hide(900);
+    
+        });
+    });
+</script>
+
+</html>
