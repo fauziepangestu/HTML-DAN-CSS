@@ -1,64 +1,53 @@
 <?php
+require 'model.php';
 
-$model = new Pelanggan();
-$pelanggan = $model->dataPelanggan();
+$model = new Model();
+$pelanggan = $model->getPelanggan();
 ?>
-
-<h1 class="mt-4">Pelanggan</h1>
+<h1 class="mt-4">Tables</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+    <li class="breadcrumb-item active">Tables</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-body">
+        DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+        <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+        .
+    </div>
+</div>
+<a href="index.php?url=insertpelanggan" class="btn btn-primary btn-sm">Insert</a>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Pelanggan
+        DataTable Example
     </div>
     <div class="card-body">
-        <table id="datatablesSimple">
+        <table id="data_pelanggan">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Kode</th>
                     <th>Nama</th>
+                    <th>Alamat</th>
                     <th>Jenis Kelamin</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Email</th>
-                    <th>Kartu ID</th>
-                    <th>Alamat</th>
                 </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th>No</th>
-                    <th>Kode</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Email</th>
-                    <th>Kartu ID</th>
-                    <th>Alamat</th>
-                </tr>
-            </tfoot>
-            <tbody>
-                <?php
-                    $no = 1;
-                    foreach ($pelanggan as $row){
-                ?>
-                <tr>
-                    <td><?= $no ?></td>
-                    <td><?= $row ['kode'] ?></td>
-                    <td><?= $row ['nama_pelanggan'] ?></td>
-                    <td><?= $row ['jk'] ?></td>
-                    <td><?= $row ['tmp_lahir'] ?></td>
-                    <td><?= $row ['tgl_lahir'] ?></td>
-                    <td><?= $row ['email'] ?></td>
-                    <td><?= $row ['kartu_id'] ?></td>   
-                    <td><?= $row ['alamat'] ?></td>   
-                </tr>
-                <?php
-                    $no++;
-                    }
-                ?>
-            </tbody>
+                <?php foreach ($pelanggan as $row) : ?>
+                    <tr>
+                        <td><?php echo $row['nama_pelanggan']; ?></td>
+                        <td><?php echo $row['alamat']; ?></td>
+                        <td><?php echo $row['jk']; ?></td>
+                        <td><?php echo $row['tmp_lahir']; ?></td>
+                        <td><?php echo $row['tgl_lahir']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
         </table>
     </div>
+
 </div>
+</div>
+<?php
+// include_once 'bottom.php';
+?>
